@@ -11,7 +11,7 @@ refs.btnStop.addEventListener('click', handleStop);
 
 function handleStart() {
 	refs.btnStart.setAttribute('disabled', true);
-	refs.btnStart.setAttribute('style', 'opacity:0.5');
+	refs.btnStart.setAttribute('style', 'opacity:0.5; cursor:not-allowed');
 
 	intervalId = setInterval(changeBodyColor, 1000);
 }
