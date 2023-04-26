@@ -1,0 +1,33 @@
+button {
+	display: block;
+	width: 100px;
+	height: 40px;
+
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+
+	cursor: pointer;
+	box-shadow: 0 3px 5px #000000;
+	box-shadow: inset 0 0 0 1px #000000;
+}
+
+button[data-start] {
+	background-color: #008000;
+}
+
+button[data-stop] {
+	background-color: #ff0000;
+}
+
+.btn-wrapper {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+}
