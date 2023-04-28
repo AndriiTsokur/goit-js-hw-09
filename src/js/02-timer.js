@@ -10,7 +10,7 @@ export const refs = {
 	startBtn: document.querySelector('[data-start]'),
 };
 
-const options = {
+const flatpickrOptions = {
 	enableTime: true,
 	time_24hr: true,
 	defaultDate: new Date(),
@@ -22,4 +22,4 @@ const options = {
 };
 
 makeStartUnavailable();
-flatpickr(refs.datePicker, options);
+flatpickr(refs.datePicker, flatpickrOptions);

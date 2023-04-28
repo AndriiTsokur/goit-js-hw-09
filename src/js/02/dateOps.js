@@ -1,9 +1,14 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { refs } from '../02-timer';
 import convertMs from './dateConverter';
 
-let isStartAvailable = null;
-let dateUnix = 0;
-let timerId = 0;
+const notifyOptions = {
+	position: 'center-center',
+	cssAnimationStyle: 'zoom',
+	clickToClose: true,
+	width: '350px',
+	fontSize: '18px',
+};
 
 const dateRefs = {
 	days: document.querySelector('[data-days]'),
@@ -11,6 +16,10 @@ const dateRefs = {
 	mins: document.querySelector('[data-minutes]'),
 	secs: document.querySelector('[data-seconds]'),
 };
+
+let isStartAvailable = null;
+let dateUnix = 0;
+let timerId = 0;
 
 export function launchProcess(dateObj) {
 	dateUnix = dateObj.getTime();
@@ -21,7 +30,7 @@ export function launchProcess(dateObj) {
 
 function checkDate(date) {
 	if (date <= Date.now()) {
-		alert('Please choose a date in the future');
+		Notify.failure('Please choose a date in the future', notifyOptions);
 		makeStartUnavailable();
 	} else {
 		makeStartAvailable();
