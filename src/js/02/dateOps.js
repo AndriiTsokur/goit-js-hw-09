@@ -46,9 +46,9 @@ function runTimer() {
 	if (timeDifference > 0) {
 		const formattedDate = convertMs(timeDifference);
 
-		for (key of Object.keys(formattedDate)) {
-			dateRefs[key].textContent = formattedDate[key];
-		}
+		Object.keys(formattedDate).map(
+			key => (dateRefs[key].textContent = formattedDate[key])
+		);
 	} else {
 		clearInterval(timerId);
 	}

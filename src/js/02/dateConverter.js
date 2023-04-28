@@ -21,9 +21,9 @@ export default function convertMs(ms) {
 		secs: seconds,
 	};
 
-	for (key of Object.keys(formattedDate)) {
-		formattedDate[key] = addLeadingZero(formattedDate[key]);
-	}
+	Object.keys(formattedDate).map(
+		key => (formattedDate[key] = addLeadingZero(formattedDate[key]))
+	);
 
 	return formattedDate;
 }
